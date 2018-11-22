@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
+set (CMAKE_CXX_STANDARD 11)
 project( Interlace )
 
 find_package( OpenCV REQUIRED )
@@ -10,7 +11,7 @@ if (OPENMP_FOUND)
     set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
 endif()
 
-file( GLOB SOURCES ./*.h ./*.cpp )
+file( GLOB SOURCES ./src/*.h ./src/*.cpp )
 
 add_executable( Interlace ${SOURCES} )
 target_link_libraries( Interlace ${Boost_LIBRARIES} ${OpenCV_LIBS} )

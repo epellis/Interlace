@@ -13,8 +13,8 @@ using namespace cv;
 class FrameStitcher
 {
   public:
-    FrameStitcher(const string fname, int fourcc, double fps, Size frameSize, FrameBuffer &afbuf, FrameBuffer &bfbuf);
-    void stitchFrames(const int framecount);
+    FrameStitcher(string fname, int fourcc, double fps, Size frameSize, FrameBuffer &afbuf, FrameBuffer &bfbuf);
+    void stitchFrames(int framecount);
 
   private:
     VideoWriter output;

@@ -13,8 +13,8 @@ using namespace cv;
 class FrameProducer
 {
   public:
-    FrameProducer(const string fname, FrameBuffer& fbuf);
-    void convertFrames(const int frame_count, Size resolution);
+    FrameProducer(string fname, FrameBuffer& fbuf);
+    void convertFrames(int frame_count, Size resolution);
 
     int my_frame_count;
     int fourcc;

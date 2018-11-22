@@ -56,7 +56,7 @@ void FrameProducer::convertFrames(const int frame_count, Size resolution)
         array.assign(resized.datastart, resized.dataend);
         for (int i = 0; i < resized.rows; i++) {
 
-            uchar* g_i = resized.ptr<uchar>(i);
+            auto g_i = resized.ptr<uchar>(i);
 
             #pragma omp simd
             for (int j = 0; j < resized.cols; j++) {

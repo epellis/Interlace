@@ -13,8 +13,8 @@ using std::endl;
  * Since nothing is allocated on the heap, nothing needs to be done
  * so this is an empty constructor
  */
-FrameBuffer::FrameBuffer() {}
-FrameBuffer::~FrameBuffer() {}
+FrameBuffer::FrameBuffer() = default;
+FrameBuffer::~FrameBuffer() = default;
 
 
 /*

@@ -24,7 +24,7 @@ void FrameStitcher::stitchFrames(const int framecount)
     Mat aframe, bframe;
     int current_frames = 0;
 
-    while (1) {
+    while (true) {
         aframe = abuf.getFrame();
         bframe = bbuf.getFrame();
 
