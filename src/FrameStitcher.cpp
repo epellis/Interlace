@@ -9,9 +9,9 @@ using std::string;
  * Constructs a FrameStitcher Class
  */
 FrameStitcher::FrameStitcher(const string fname, int fourcc, double fps,
-                             Size frameSize, FrameBuffer &afbuf, FrameBuffer &bfbuf)
-: abuf(afbuf), bbuf(bfbuf)
-{
+                             Size frameSize, FrameBuffer &afbuf,
+                             FrameBuffer &bfbuf)
+    : abuf(afbuf), bbuf(bfbuf) {
     output = VideoWriter(fname, fourcc, fps, frameSize, false);
 }
 
@@ -19,8 +19,7 @@ FrameStitcher::FrameStitcher(const string fname, int fourcc, double fps,
  * Stitches frames from two outputs until both are exhausted.
  * This effectively interlaces video from two sources
  */
-void FrameStitcher::stitchFrames(const int framecount)
-{
+void FrameStitcher::stitchFrames(const int framecount) {
     Mat aframe, bframe;
     int current_frames = 0;
 
@@ -28,10 +27,8 @@ void FrameStitcher::stitchFrames(const int framecount)
         aframe = abuf.getFrame();
         bframe = bbuf.getFrame();
 
-        if (!aframe.empty())
-            output.write(aframe);
-        if (!bframe.empty())
-            output.write(bframe);
+        if (!aframe.empty()) output.write(aframe);
+        if (!bframe.empty()) output.write(bframe);
 
         current_frames += 2;
 

@@ -1,6 +1,6 @@
-#include <queue>
-#include <mutex>
 #include <condition_variable>
+#include <mutex>
+#include <queue>
 
 #include <opencv2/opencv.hpp>
 
@@ -8,13 +8,12 @@
 #define FRAME_BUFFER_H
 
 using namespace cv;
-using std::queue;
-using std::mutex;
 using std::condition_variable;
+using std::mutex;
+using std::queue;
 
-class FrameBuffer
-{
-  public:
+class FrameBuffer {
+   public:
     FrameBuffer();
     FrameBuffer(const FrameBuffer& copy_from);
     FrameBuffer& operator=(const FrameBuffer& copy_from);
@@ -23,11 +22,10 @@ class FrameBuffer
     void addFrame(Mat& frame);
     Mat getFrame();
 
-  private:
+   private:
     queue<Mat> buf;
     mutex mu;
     condition_variable new_frames_cv;
 };
 
-
-#endif // FRAME_BUFFER_H
+#endif  // FRAME_BUFFER_H

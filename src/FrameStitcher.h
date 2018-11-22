@@ -10,16 +10,16 @@
 using std::string;
 using namespace cv;
 
-class FrameStitcher
-{
-  public:
-    FrameStitcher(string fname, int fourcc, double fps, Size frameSize, FrameBuffer &afbuf, FrameBuffer &bfbuf);
+class FrameStitcher {
+   public:
+    FrameStitcher(string fname, int fourcc, double fps, Size frameSize,
+                  FrameBuffer &afbuf, FrameBuffer &bfbuf);
     void stitchFrames(int framecount);
 
-  private:
+   private:
     VideoWriter output;
     FrameBuffer &abuf;
     FrameBuffer &bbuf;
 };
 
-#endif // FRAME_STITCHER_H
+#endif  // FRAME_STITCHER_H

@@ -1,12 +1,12 @@
 #include "FrameBuffer.h"
 
 using namespace cv;
-using std::string;
-using std::mutex;
-using std::lock_guard;
-using std::unique_lock;
 using std::cout;
 using std::endl;
+using std::lock_guard;
+using std::mutex;
+using std::string;
+using std::unique_lock;
 
 /*
  * Constructs and Destructs a FrameBuffer Class
@@ -16,12 +16,10 @@ using std::endl;
 FrameBuffer::FrameBuffer() = default;
 FrameBuffer::~FrameBuffer() = default;
 
-
 /*
  * Adds a frame to the end of the buffer. Should always work.
  */
-void FrameBuffer::addFrame(Mat& frame)
-{
+void FrameBuffer::addFrame(Mat& frame) {
     /* Establish a critical section to write frame to the queue */
     lock_guard<mutex> lock(mu);
 
@@ -33,8 +31,7 @@ void FrameBuffer::addFrame(Mat& frame)
 /*
  * Returns the first frame in the buffer
  */
-Mat FrameBuffer::getFrame()
-{
+Mat FrameBuffer::getFrame() {
     bool buffer_empty;
     /* Critical section - see if queue has any frames already */
     mu.lock();

@@ -10,18 +10,17 @@
 using std::string;
 using namespace cv;
 
-class FrameProducer
-{
-  public:
+class FrameProducer {
+   public:
     FrameProducer(string fname, FrameBuffer& fbuf);
     void convertFrames(int frame_count, Size resolution);
 
     int my_frame_count;
     int fourcc;
 
-  private:
+   private:
     VideoCapture capture;
     FrameBuffer& buf;
 };
 
-#endif // FRAME_PRODUCER_H
+#endif  // FRAME_PRODUCER_H
