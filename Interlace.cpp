@@ -91,8 +91,6 @@ int main(int argc, char **argv)
 
     int output_frames = min(a.my_frame_count, b.my_frame_count) - 1;
 
-
-
     chrono::time_point<std::chrono::system_clock> start, end;
 
     cout << "Starting Conversion..." << "\t";
